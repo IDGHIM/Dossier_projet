@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Aléa - Dossier Projet | Ichem DGHIM</title>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>Aléa</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#cahier-des-charges">Cahier des charges</a></li>
+                <li><a href="#developpement">Développement</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Aléa</h1>
+                <p class="hero-subtitle">Application de Quiz Interactive</p>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <strong>Projet réalisé dans le cadre :</strong>
+                        <span>Titre Professionnel Développeur Web et Web Mobile</span>
+                    </div>
+                    <div class="meta-item">
+                        <strong>Présenté par :</strong>
+                        <span>Ichem DGHIM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Table des matières -->
+    <section class="toc">
+        <div class="container">
+            <h2>Sommaire</h2>
+            <div class="toc-grid">
+                <div class="toc-section">
+                    <h3>1. Introduction</h3>
+                    <ul>
+                        <li><a href="#introduction">Présentation du développeur</a></li>
+                        <li><a href="#concept-alea">Concept Aléa</a></li>
+                    </ul>
+                </div>
+                <div class="toc-section">
+                    <h3>2. Cahier des charges</h3>
+                    <ul>
+                        <li><a href="#contexte">Contexte du projet</a></li>
+                        <li><a href="#objectifs">Objectifs</a></li>
+                        <li><a href="#perimetre">Périmètre fonctionnel</a></li>
+                        <li><a href="#contraintes">Contraintes</a></li>
+                        <li><a href="#livrables">Livrables attendus</a></li>
+                    </ul>
+                </div>
+                <div class="toc-section">
+                    <h3>3. Développement</h3>
+                    <ul>
+                        <li><a href="#dev-global">Développement global</a></li>
+                        <li><a href="#dev-front">Développement Front-end</a></li>
+                        <li><a href="#dev-back">Développement Back-end</a></li>
+                        <li><a href="#gestion">Gestion & Organisation</a></li>
+                    </ul>
+                </div>
+                <div class="toc-section">
+                    <h3>4. Conclusion</h3>
+                    <ul>
+                        <li><a href="#bilan">Bilan du développement</a></li>
+                        <li><a href="#points-forts">Points forts</a></li>
+                        <li><a href="#evolutions">Évolutions</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section id="introduction" class="section">
+        <div class="container">
+            <h2>Introduction</h2>
+            <div class="content-grid">
+                <div class="profile-card">
+                    <h3>Profil du développeur</h3>
+                    <p>Je suis un développeur web junior de 20 ans, passionné par l'univers du développement et de la création numérique. Diplômé d'un bac STI2D spécialité SIN et actuellement basé à Agen, je me spécialise dans la conception de sites modernes, performants et entièrement responsives.</p>
+                    
+                    <div class="skills">
+                        <h4>Compétences techniques</h4>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Mongoose</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-origin">
+                    <h3 id="concept-alea">Concept Aléa</h3>
+                    <p>Le projet que je présente s'inscrit dans une démarche d'apprentissage et de mise en pratique. Il s'agit du développement d'une application de quiz, initialement pensée pour le domaine du powerlifting, puis évoluée vers un modèle plus ambitieux : une plateforme en marque blanche, modulable et personnalisable.</p>
+                    
+                    <div class="name-origin">
+                        <h4>Origine du nom</h4>
+                        <p>Le nom "Aléa" est inspiré de l'expression latine "Alea iacta est" (le dé est jeté). Ce nom symbolise à la fois le jeu et la prise de décision. Le dé illustre l'incertitude et le défi, éléments centraux dans un quiz où chaque question met en jeu la réflexion, l'intuition et parfois la chance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cahier des charges -->
+    <section id="cahier-des-charges" class="section bg-alternate">
+        <div class="container">
+            <h2>Cahier des charges</h2>
+            
+            <div id="contexte" class="subsection">
+                <h3>Contexte du projet</h3>
+                <p>L'application vise à offrir une plateforme interactive, moderne et accessible, pensée pour répondre aux besoins des utilisateurs et des administrateurs. Chaque utilisateur peut s'inscrire, se connecter en sécurité, personnaliser son profil et accéder à des quiz conçus pour allier apprentissage et divertissement.</p>
+            </div>
+
+            <div id="objectifs" class="subsection">
+                <h3>Objectifs</h3>
+                <ul class="objectives-list">
+                    <li>Offrir une expérience utilisateur fluide avec React et React Router</li>
+                    <li>Intégrer des mécanismes robustes d'authentification et de gestion des rôles</li>
+                    <li>Porter une attention particulière à l'accessibilité</li>
+                    <li>Adopter une architecture modulaire et évolutive</li>
+                </ul>
+            </div>
+
+            <div id="perimetre" class="subsection">
+                <h3>Périmètre fonctionnel</h3>
+                
+                <div class="features-grid">
+                    <div class="feature-category">
+                        <div class="category-header public">
+                            <span class="icon">🔓</span>
+                            <h4>Fonctionnalités accessibles à tous</h4>
+                        </div>
+                        <ul>
+                            <li>Page d'accueil avec présentation du site</li>
+                            <li>Accès aux quiz en mode visiteur</li>
+                            <li>Mentions légales et licence consultables</li>
+                            <li>Formulaire de contact</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-category">
+                        <div class="category-header auth">
+                            <span class="icon">🔑</span>
+                            <h4>Fonctionnalités liées à l'authentification</h4>
+                        </div>
+                        <ul>
+                            <li>Inscription avec confirmation par mail</li>
+                            <li>Connexion sécurisée</li>
+                            <li>Réinitialisation du mot de passe via mail (token)</li>
+                            <li>Vérification d'adresse mail</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-category">
+                        <div class="category-header user">
+                            <span class="icon">🔒</span>
+                            <h4>Fonctionnalités réservées aux utilisateurs connectés</h4>
+                        </div>
+                        <ul>
+                            <li>Accès à un profil personnalisé</li>
+                            <li>Historique des quiz</li>
+                            <li>Suivi des performances</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-category">
+                        <div class="category-header admin">
+                            <span class="icon">🛡️</span>
+                            <h4>Fonctionnalités réservées aux administrateurs</h4>
+                        </div>
+                        <ul>
+                            <li>Accès à un panneau d'administration</li>
+                            <li>Gestion des utilisateurs et des contenus</li>
+                            <li>Création et modification de quiz</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="error-handling">
+                    <div class="category-header error">
+                        <span class="icon">❌</span>
+                        <h4>Gestion des erreurs</h4>
+                    </div>
+                    <p>Page 404 personnalisée avec options de retour</p>
+                </div>
+            </div>
+
+            <div id="contraintes" class="subsection">
+                <h3>Contraintes</h3>
+                
+                <div class="constraints-grid">
+                    <div class="constraint-card">
+                        <h4>Contraintes techniques</h4>
+                        <ul>
+                            <li>Front-end développé en React avec React Router DOM</li>
+                            <li>Composant ProtectedRoute pour la gestion des accès</li>
+                            <li>AccessibilityMenu intégré dès la conception</li>
+                            <li>Design responsive sur tous supports</li>
+                            <li>Communication via API REST</li>
+                        </ul>
+                    </div>
+
+                    <div class="constraint-card">
+                        <h4>Contraintes de sécurité</h4>
+                        <ul>
+                            <li>Hachage des mots de passe côté back-end</li>
+                            <li>Contrôles d'authentification stricts</li>
+                            <li>Vérification des rôles (user, admin)</li>
+                            <li>Protection des données sensibles</li>
+                        </ul>
+                    </div>
+
+                    <div class="constraint-card">
+                        <h4>Contraintes légales</h4>
+                        <ul>
+                            <li>Conformité RGPD</li>
+                            <li>Page mentions légales intégrée</li>
+                            <li>Transparence sur les conditions d'utilisation</li>
+                            <li>Gestion des droits utilisateurs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="livrables" class="subsection">
+                <h3>Livrables attendus</h3>
+                <div class="deliverables">
+                    <div class="deliverable-item">
+                        <h4>Code source complet</h4>
+                        <p>Front-end développé en React avec clarté et maintenabilité</p>
+                    </div>
+                    <div class="deliverable-item">
+                        <h4>Documentation</h4>
+                        <p>Documentation technique et utilisateur complète</p>
+                    </div>
+                    <div class="deliverable-item">
+                        <h4>Tests</h4>
+                        <p>Cahier de tests unitaires et fonctionnels</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Développement Global -->
+    <section id="developpement" class="section">
+        <div class="container">
+            <h2>Développement</h2>
+            
+            <div id="dev-global" class="subsection">
+                <h3>Développement Global</h3>
+                
+                <div class="tech-overview">
+                    <h4>Technologies utilisées</h4>
+                    <div class="tech-categories">
+                        <div class="tech-category">
+                            <h5>Front-end</h5>
+                            <ul>
+                                <li>React & JavaScript</li>
+                                <li>React Router</li>
+                                <li>Axios pour les appels API</li>
+                            </ul>
+                        </div>
+                        <div class="tech-category">
+                            <h5>Back-end</h5>
+                            <ul>
+                                <li>Node.js & Express</li>
+                                <li>MongoDB avec Mongoose</li>
+                                <li>JWT pour l'authentification</li>
+                            </ul>
+                        </div>
+                        <div class="tech-category">
+                            <h5>Outils</h5>
+                            <ul>
+                                <li>Docker (optionnel)</li>
+                                <li>ESLint & Prettier</li>
+                                <li>Git pour le versioning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="architecture-overview">
+                    <h4>Organisation du code</h4>
+                    
+                    <div class="architecture-section">
+                        <h5>Client (Front-end)</h5>
+                        <div class="folder-structure">
+                            <ul class="folder-tree">
+                                <li>📁 public/ <span>- fichiers statiques</span></li>
+                                <li>📁 src/
+                                    <ul>
+                                        <li>📁 assets/ <span>- ressources graphiques</span></li>
+                                        <li>📁 components/ <span>- composants réutilisables</span></li>
+                                        <li>📁 features/ <span>- modules fonctionnels</span></li>
+                                        <li>📁 pages/ <span>- pages principales</span></li>
+                                        <li>📁 services/ <span>- appels API</span></li>
+                                        <li>📁 utils/ <span>- fonctions utilitaires</span></li>
+                                        <li>📄 App.jsx</li>
+                                        <li>📄 index.jsx</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="architecture-section">
+                        <h5>Server (Back-end)</h5>
+                        <div class="folder-structure">
+                            <ul class="folder-tree">
+                                <li>📁 controllers/ <span>- logique métier</span></li>
+                                <li>📁 models/ <span>- schémas de données</span></li>
+                                <li>📁 routes/ <span>- endpoints API</span></li>
+                                <li>📁 middleware/ <span>- sécurité et gestion erreurs</span></li>
+                                <li>📁 services/ <span>- logique applicative</span></li>
+                                <li>📁 utils/ <span>- utilitaires génériques</span></li>
+                                <li>📄 app.js <span>- configuration Express</span></li>
+                                <li>📄 server.js <span>- point d'entrée serveur</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Développement Front-end -->
+            <div id="dev-front" class="subsection">
+                <h3>Développement Front-end</h3>
+                
+                <div class="component-showcase">
+                    <div class="component-card">
+                        <h4>📑 Navbar.jsx</h4>
+                        <div class="component-details">
+                            <div class="component-role">
+                                <h5>Rôle</h5>
+                                <p>Élément central de navigation présent sur toutes les pages, s'adaptant selon le statut de connexion et le rôle de l'utilisateur.</p>
+                            </div>
+                            
+                            <div class="component-features">
+                                <h5>Fonctionnement</h5>
+                                <ul>
+                                    <li>Vérification automatique de l'authentification via /api/me</li>
+                                    <li>Rafraîchissement toutes les 5 minutes</li>
+                                    <li>Déconnexion sécurisée avec redirection</li>
+                                </ul>
+                            </div>
+
+                            <div class="navigation-table">
+                                <h5>Navigation par rôle</h5>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Fonctionnalité</th>
+                                            <th>Visiteur</th>
+                                            <th>Utilisateur</th>
+                                            <th>Administrateur</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Accueil</td>
+                                            <td class="access-yes">✅</td>
+                                            <td class="access-yes">✅</td>
+                                            <td class="access-yes">✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Inscription/Connexion</td>
+                                            <td class="access-yes">✅</td>
+                                            <td class="access-no">❌</td>
+                                            <td class="access-no">❌</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Quiz</td>
+                                            <td class="access-no">❌</td>
+                                            <td class="access-yes">✅</td>
+                                            <td class="access-yes">✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Profil</td>
+                                            <td class="access-no">❌</td>
+                                            <td class="access-yes">✅</td>
+                                            <td class="access-yes">✅</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Administration</td>
+                                            <td class="access-no">❌</td>
+                                            <td class="access-no">❌</td>
+                                            <td class="access-yes">✅</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="component-card highlight">
+                        <h4>📑 AccessibilityMenu.jsx</h4>
+                        <div class="component-details">
+                            <div class="component-role">
+                                <h5>Rôle</h5>
+                                <p>Pilier différenciant de l'application, visant à rendre la plateforme inclusive et conforme aux normes d'accessibilité WCAG 2.1.</p>
+                            </div>
+
+                            <div class="accessibility-stats">
+                                <h5>Statistiques sur l'accessibilité web</h5>
+                                <div class="stats-grid">
+                                    <div class="stat-item">
+                                        <span class="stat-number">1,6 milliards</span>
+                                        <span class="stat-label">de personnes avec un handicap dans le monde</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">94%</span>
+                                        <span class="stat-label">des sites européens non accessibles</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">3-4%</span>
+                                        <span class="stat-label">des sites privés français accessibles</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accessibility-features">
+                                <h5>Fonctionnalités détaillées</h5>
+                                <div class="features-categories">
+                                    <div class="feature-group">
+                                        <h6>👀 Vision</h6>
+                                        <ul>
+                                            <li>Mode contraste élevé</li>
+                                            <li>Mode sombre/clair</li>
+                                            <li>Filtres daltonisme</li>
+                                            <li>Réglages de police</li>
+                                        </ul>
+                                    </div>
+                                    <div class="feature-group">
+                                        <h6>📖 Lecture</h6>
+                                        <ul>
+                                            <li>Police spéciale dyslexie</li>
+                                            <li>Guide de lecture</li>
+                                            <li>Mise en évidence des liens</li>
+                                        </ul>
+                                    </div>
+                                    <div class="feature-group">
+                                        <h6>🔊 Audio</h6>
+                                        <ul>
+                                            <li>Synthèse vocale</li>
+                                            <li>Lecture au survol</li>
+                                            <li>Réglage vitesse/volume</li>
+                                        </ul>
+                                    </div>
+                                    <div class="feature-group">
+                                        <h6>⌨️ Navigation</h6>
+                                        <ul>
+                                            <li>Curseur agrandi</li>
+                                            <li>Réduction animations</li>
+                                            <li>Focus clavier amélioré</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="keyboard-shortcuts">
+                                <h5>Raccourcis clavier intégrés</h5>
+                                <div class="shortcuts-grid">
+                                    <span class="shortcut"><kbd>Alt + A</kbd> Ouvrir/fermer le menu</span>
+                                    <span class="shortcut"><kbd>Alt + C</kbd> Contraste élevé</span>
+                                    <span class="shortcut"><kbd>Alt + D</kbd> Mode dyslexie</span>
+                                    <span class="shortcut"><kbd>Alt + S</kbd> Synthèse vocale</span>
+                                    <span class="shortcut"><kbd>Alt + M</kbd> Mode sombre/clair</span>
+                                    <span class="shortcut"><kbd>Alt + +/-</kbd> Taille du texte</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="component-card">
+                        <h4>📑 QuizPage.jsx</h4>
+                        <div class="component-details">
+                            <div class="component-role">
+                                <h5>Rôle</h5>
+                                <p>Cœur fonctionnel de l'application, gère l'ensemble du cycle de vie d'un quiz depuis la récupération des questions jusqu'à l'affichage des résultats.</p>
+                            </div>
+
+                            <div class="quiz-flow">
+                                <h5>Cycle du quiz</h5>
+                                <div class="flow-steps">
+                                    <div class="step">1. Écran d'accueil</div>
+                                    <div class="arrow">→</div>
+                                    <div class="step">2. Questions interactives</div>
+                                    <div class="arrow">→</div>
+                                    <div class="step">3. Gestion des réponses</div>
+                                    <div class="arrow">→</div>
+                                    <div class="step">4. Résultats détaillés</div>
+                                </div>
+                            </div>
+
+                            <div class="component-features">
+                                <h5>Fonctionnalités principales</h5>
+                                <ul>
+                                    <li>Récupération intelligente des données depuis l'API</li>
+                                    <li>Gestion des choix uniques et multiples</li>
+                                    <li>Progression en temps réel avec score</li>
+                                    <li>Résultats détaillés avec corrections</li>
+                                    <li>Actions post-quiz (recommencer, nouveau quiz, accueil)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="component-card">
+                        <h4>📑 AdminPage.jsx</h4>
+                        <div class="component-details">
+                            <div class="component-role">
+                                <h5>Rôle</h5>
+                                <p>Panneau d'administration centralisé offrant une interface complète pour la gestion de la plateforme.</p>
+                            </div>
+
+                            <div class="admin-features">
+                                <h5>Fonctionnalités principales</h5>
+                                <div class="admin-sections">
+                                    <div class="admin-section">
+                                        <h6>👤 Gestion des utilisateurs</h6>
+                                        <ul>
+                                            <li>Création avec rôles</li>
+                                            <li>Édition de profils</li>
+                                            <li>Suppression sécurisée</li>
+                                        </ul>
+                                    </div>
+                                    <div class="admin-section">
+                                        <h6>📚 Gestion des quiz</h6>
+                                        <ul>
+                                            <li>Création et édition</li>
+                                            <li>Duplication de quiz</li>
+                                            <li>Association de questions</li>
+                                        </ul>
+                                    </div>
+                                    <div class="admin-section">
+                                        <h6>❓ Gestion des questions</h6>
+                                        <ul>
+                                            <li>Création manuelle</li>
+                                            <li>Import de questions existantes</li>
+                                            <li>Filtrage et recherche</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Développement Back-end -->
+            <div id="dev-back" class="subsection">
+                <h3>Développement Back-end</h3>
+                
+                <div class="backend-section">
+                    <h4>Modèles Mongoose</h4>
+                    <div class="models-grid">
+                        <div class="model-card">
+                            <h5>👤 Modèle User</h5>
+                            <div class="model-structure">
+                                <h6>Structure :</h6>
+                                <ul>
+                                    <li><code>username</code> - nom d'utilisateur obligatoire</li>
+                                    <li><code>email</code> - unique et requis</li>
+                                    <li><code>password</code> - mot de passe hashé avec bcrypt</li>
+                                    <li><code>role</code> - "user" ou "admin"</li>
+                                    <li><code>isVerified</code> - validation email</li>
+                                    <li><code>resetToken</code> & <code>resetTokenExpiration</code></li>
+                                </ul>
+                                <h6>Méthodes :</h6>
+                                <ul>
+                                    <li><code>toPublicJSON()</code> - données publiques sans mot de passe</li>
+                                    <li><code>findByIdPublic(id)</code> - récupération sécurisée</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="model-card">
+                            <h5>📚 Modèle Quiz</h5>
+                            <div class="model-structure">
+                                <h6>Structure :</h6>
+                                <ul>
+                                    <li><code>title</code> - titre obligatoire</li>
+                                    <li><code>description</code> - optionnelle</li>
+                                    <li><code>category</code> - catégorie obligatoire</li>
+                                    <li><code>createdBy</code> - ID créateur</li>
+                                    <li><code>isAutoGenerated</code> - quiz automatique</li>
+                                    <li><code>questionsCount</code> - nombre de questions</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="model-card">
+                            <h5>❓ Modèle Question</h5>
+                            <div class="model-structure">
+                                <h6>Structure :</h6>
+                                <ul>
+                                    <li><code>question</code> - énoncé obligatoire</li>
+                                    <li><code>answers</code> - tableau de réponses (A, B, C)</li>
+                                    <li><code>correctAnswers</code> - bonnes réponses (multiples possibles)</li>
+                                    <li><code>category</code> - catégorie de la question</li>
+                                    <li><code>quizId</code> - référence optionnelle au quiz</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="backend-section">
+                    <h4>Middleware pour l'application</h4>
+                    <div class="middleware-grid">
+                        <div class="middleware-card">
+                            <h5>🔐 protect</h5>
+                            <p>Vérification JWT dans cookies ou headers, récupération des données utilisateur sécurisées.</p>
+                        </div>
+                        <div class="middleware-card">
+                            <h5>🛡️ authorize</h5>
+                            <p>Contrôle d'accès basé sur les rôles, restriction aux utilisateurs autorisés selon leur niveau de permission.</p>
+                        </div>
+                        <div class="middleware-card">
+                            <h5>🔓 optionalAuth</h5>
+                            <p>Authentification optionnelle pour routes mixtes, personnalisation selon statut de connexion.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="backend-section">
+                    <h4>Routes de l'application</h4>
+                    <div class="routes-overview">
+                        <div class="route-category">
+                            <h5>🔑 Routes d'authentification</h5>
+                            <p>Inscription, connexion, réinitialisation de mot de passe, vérification email. Accès public pour les fonctionnalités de base.</p>
+                        </div>
+                        <div class="route-category">
+                            <h5>📚 Routes Quiz</h5>
+                            <p>CRUD complet pour la gestion des quiz : création, lecture, modification, suppression, duplication.</p>
+                        </div>
+                        <div class="route-category">
+                            <h5>❓ Routes Questions</h5>
+                            <p>Gestion des questions avec association flexible aux quiz ou catégories, maintien de l'intégrité des données.</p>
+                        </div>
+                        <div class="route-category">
+                            <h5>👤 Routes Utilisateurs</h5>
+                            <p>Accès mixte : consultation pour tous les connectés, modification réservée aux administrateurs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="backend-section">
+                    <h4>Fichier serveur principal (server.js)</h4>
+                    
+                    <div class="server-features">
+                        <div class="server-feature">
+                            <h5>🔒 Sécurité renforcée avec headers HTTP</h5>
+                            <div class="security-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Header</th>
+                                            <th>Rôle</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>X-Content-Type-Options: nosniff</td>
+                                            <td>Empêche le navigateur de deviner le type MIME</td>
+                                        </tr>
+                                        <tr>
+                                            <td>X-Frame-Options: DENY</td>
+                                            <td>Empêche l'affichage dans un iframe (clickjacking)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>X-XSS-Protection: 1; mode=block</td>
+                                            <td>Active la protection XSS du navigateur</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Referrer-Policy</td>
+                                            <td>Limite les informations transmises aux sites tiers</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Content-Security-Policy</td>
+                                            <td>Restreint les sources de scripts, styles, images</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="server-feature">
+                            <h5>⚡ Rate limiting (protection contre abus)</h5>
+                            <div class="rate-limits">
+                                <div class="limit-item">
+                                    <strong>Global :</strong> 100 requêtes / 15 min par IP
+                                </div>
+                                <div class="limit-item">
+                                    <strong>Auth :</strong> 10 tentatives / 15 min par IP
+                                </div>
+                                <div class="limit-item">
+                                    <strong>API :</strong> 50 requêtes / 15 min par IP
+                                </div>
+                                <div class="limit-item">
+                                    <strong>Admin :</strong> 200 requêtes / 15 min par IP
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="server-feature">
+                            <h5>🌐 CORS et gestion des origines</h5>
+                            <p>Acceptation uniquement des origines spécifiques (développement et production), gestion des credentials pour cookies sécurisés, rejet automatique des domaines non autorisés.</p>
+                        </div>
+
+                        <div class="server-feature">
+                            <h5>🛡️ Validation et logging</h5>
+                            <ul>
+                                <li>Protection contre l'accès aux fichiers sensibles (.env, .git, etc.)</li>
+                                <li>Limitation des payloads à 10MB</li>
+                                <li>Logging des requêtes avec timestamp, IP et user-agent</li>
+                                <li>Validation stricte côté serveur (ID MongoDB, pagination, rôles)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="request-flow">
+                        <h5>Flux complet d'une requête</h5>
+                        <div class="flow-diagram">
+                            <div class="flow-step">1. Requête entrante</div>
+                            <div class="flow-arrow">↓</div>
+                            <div class="flow-step">2. Headers sécurité + CORS</div>
+                            <div class="flow-arrow">↓</div>
+                            <div class="flow-step">3. Rate limiting</div>
+                            <div class="flow-arrow">↓</div>
+                            <div class="flow-step">4. Parsing & validation</div>
+                            <div class="flow-arrow">↓</div>
+                            <div class="flow-step">5. Auth & authorization</div>
+                            <div class="flow-arrow">↓</div>
+                            <div class="flow-step">6. Routing vers contrôleur</div>
+                            <div class="flow-arrow">↓</div>
+                            <div class="flow-step">7. Réponse JSON</div>
+                            <div class="flow-arrow">↓</div>
+                            <div class="flow-step">8. Logging & monitoring</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="gestion" class="subsection">
+                <h3>Gestion & Organisation</h3>
+                <div class="project-management">
+                    <p>Dans la phase de gestion et d'organisation du projet, j'ai mis en place une méthode basée sur des tableaux Kanban, pour suivre efficacement l'avancement des tâches et garder une vision claire de la progression.</p>
+                    
+                    <div class="management-flow">
+                        <div class="management-step">
+                            <h4>GitHub Projects</h4>
+                            <p>Utilisation initiale avec trois tableaux distincts (global, front-end, back-end), regroupant des issues correspondant aux fonctionnalités à développer.</p>
+                        </div>
+                        <div class="management-step">
+                            <h4>Migration vers Notion</h4>
+                            <p>Vue plus flexible et centralisée des tickets, tout en conservant une logique de suivi similaire.</p>
+                        </div>
+                        <div class="management-step">
+                            <h4>Approche MVP</h4>
+                            <p>Majorité des tickets concernant des éléments MVP, priorisation des fonctionnalités essentielles dès le départ.</p>
+                        </div>
+                        <div class="management-step">
+                            <h4>Développement itératif</h4>
+                            <p>Approche incrémentale : développement front puis implémentation back correspondante si nécessaire.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion -->
+    <section id="conclusion" class="section bg-alternate">
+        <div class="container">
+            <h2>Conclusion</h2>
+            
+            <div id="bilan" class="subsection">
+                <h3>Bilan du développement</h3>
+                <div class="project-summary">
+                    <div class="summary-stats">
+                        <div class="stat-card">
+                            <span class="stat-number">79%</span>
+                            <span class="stat-label">Taux d'achèvement</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">MVP</span>
+                            <span class="stat-label">Fonctionnel</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">Full-Stack</span>
+                            <span class="stat-label">Architecture moderne</span>
+                        </div>
+                    </div>
+                    <p>Le projet Aléa représente l'aboutissement d'une démarche de développement full-stack moderne, alliant maîtrise technique et vision produit. L'application démontre une architecture robuste couvrant l'ensemble de la chaîne de développement web.</p>
+                </div>
+            </div>
+
+            <div id="points-forts" class="subsection">
+                <h3>Points forts du projet</h3>
+                <div class="strengths-grid">
+                    <div class="strength-card">
+                        <h4>🏗️ Architecture technique solide</h4>
+                        <p>Stack technologique moderne (React 18, Node.js, Express, MongoDB) avec architecture MVC bien définie. Sécurisation JWT, middleware de protection et validation des données.</p>
+                    </div>
+                    
+                    <div class="strength-card highlight">
+                        <h4>♿ Expérience utilisateur différenciante</h4>
+                        <p>Menu d'accessibilité complet avec mode contraste, police dyslexie, synthèse vocale, raccourcis clavier. Approche inclusive touchant un public large.</p>
+                    </div>
+                    
+                    <div class="strength-card">
+                        <h4>🛠️ Système d'administration complet</h4>
+                        <p>Gestion centralisée et granulaire : utilisateurs avec rôles, création/édition de quiz, réutilisation de questions. Contrôle total sur contenu et accès.</p>
+                    </div>
+                    
+                    <div class="strength-card">
+                        <h4>🔒 Sécurité renforcée</h4>
+                        <p>Headers HTTP sécurisés, rate limiting multi-niveaux, protection CORS, validation stricte. Protection efficace contre attaques courantes (XSS, CSRF, injection, DoS).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="evolutions" class="subsection">
+                <h3>Évolutions et perspectives</h3>
+                
+                <div class="evolution-timeline">
+                    <div class="timeline-section">
+                        <h4>📈 Fonctionnalités avancées à court terme</h4>
+                        <ul class="evolution-list">
+                            <li>Système de catégories étendues avec filtrage intelligent</li>
+                            <li>Mode multijoueur temps réel avec WebSockets</li>
+                            <li>Génération automatique de quiz basée sur l'IA</li>
+                            <li>Analytics utilisateur et tableaux de bord de performance</li>
+                            <li>Système de badges et gamification</li>
+                            <li>Export/import de quiz aux formats standardisés</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-section">
+                        <h4>⚡ Scalabilité technique</h4>
+                        <ul class="evolution-list">
+                            <li>Containerisation Docker avec orchestration Kubernetes</li>
+                            <li>Pipeline CI/CD avec tests automatisés</li>
+                            <li>Mise en cache Redis pour optimiser les performances</li>
+                            <li>CDN pour distribution des ressources statiques</li>
+                            <li>Architecture microservices pour gestion de charge</li>
+                            <li>Base de données distribuée avec réplication</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-section">
+                        <h4>💼 Développement commercial</h4>
+                        <ul class="evolution-list">
+                            <li>Modèle SaaS multi-tenant avec personnalisation</li>
+                            <li>API publique avec système de quotas</li>
+                            <li>Intégrations LMS existants</li>
+                            <li>Version mobile native avec synchronisation offline</li>
+                            <li>Marketplace de quiz communautaire</li>
+                            <li>Système de monétisation par abonnements premium</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-section">
+                        <h4>🤖 Intelligence artificielle et ML</h4>
+                        <ul class="evolution-list">
+                            <li>Recommandations personnalisées basées sur l'historique</li>
+                            <li>Génération automatique de questions depuis contenus externes</li>
+                            <li>Analyse prédictive des performances d'apprentissage</li>
+                            <li>Adaptation dynamique de la difficulté selon niveau</li>
+                            <li>Détection automatique de plagiat et contenu inapproprié</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-conclusion">
+                <h3>Conclusion générale</h3>
+                <div class="conclusion-content">
+                    <p>Le projet Aléa illustre la capacité à concevoir et développer une application web complète, sécurisée et accessible, en respectant les standards professionnels du développement moderne. L'architecture mise en place, la qualité du code produit et l'attention portée à l'expérience utilisateur démontrent une maîtrise technique solide et une vision produit claire.</p>
+                    
+                    <p>L'application est d'ores et déjà prête pour une mise en production et dispose d'un potentiel d'évolution important, tant sur le plan technique que fonctionnel. La base architecturale robuste et l'approche modulaire facilitent l'intégration de nouvelles fonctionnalités et l'adaptation aux besoins futurs du marché.</p>
+                    
+                    <p>Ce projet représente ainsi un tremplin vers des développements plus ambitieux, tout en constituant une démonstration concrète des compétences acquises dans le cadre de la formation <strong>Développeur Web et Web Mobile</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Aléa</h3>
+                    <p>Projet réalisé par Ichem DGHIM</p>
+                    <p>Dans le cadre du Titre Professionnel Développeur Web et Web Mobile</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Technologies utilisées</h4>
+                    <div class="tech-badges">
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">Express</span>
+                        <span class="tech-badge">MongoDB</span>
+                        <span class="tech-badge">JWT</span>
+                        <span class="tech-badge">Mongoose</span>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>Développeur Web Junior</p>
+                    <p>Basé à Agen, France</p>
+                    <p>Formation AFEC</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ichem DGHIM - Tous droits réservés</p>
+                <p>Document de présentation - Titre Professionnel Développeur Web et Web Mobile</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation fluide
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navigation sticky
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Animation au scroll (simple)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observer tous les éléments avec la classe 'animate-on-scroll'
+        document.querySelectorAll('.component-card, .strength-card, .stat-card').forEach(el => {
+            el.classList.add('animate-on-scroll');
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
